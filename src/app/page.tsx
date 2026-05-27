@@ -283,7 +283,13 @@ export default function Home() {
       </section>
 
       {/* ── Footer ────────────────────────────────────────── */}
-      <footer className="py-10 px-6 border-t border-border text-center">
+      <footer className="py-10 px-6 border-t border-border text-center space-y-2">
+        <div className="flex justify-center gap-6 text-sm">
+          <a href="/blog" className="text-zinc-400 hover:text-gold transition-colors">Blog</a>
+          <a href="/dashboard" className="text-zinc-400 hover:text-gold transition-colors">Dashboard</a>
+          <a href="https://mustafabobaki.gumroad.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-gold transition-colors">Store</a>
+          <a href="https://github.com/mustafabobaki2001-stack" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-gold transition-colors">GitHub</a>
+        </div>
         <p className="text-sm text-zinc-500">Built by Mustafa Bobaki</p>
       </footer>
     </div>
