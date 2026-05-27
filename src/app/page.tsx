@@ -100,6 +100,16 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* ── Promo Banner ─────────────────────────────────── */}
+      <div className="bg-gradient-to-r from-gold/20 via-gold/10 to-gold/20 border-b border-gold/20 py-2.5 px-4 text-center text-sm">
+        <span className="text-gold font-semibold">LAUNCH20</span>
+        <span className="text-zinc-300 mx-2">—</span>
+        <span className="text-zinc-400">20% off everything.</span>
+        <a href="https://mustafabobaki.gumroad.com" target="_blank" rel="noopener noreferrer" className="text-gold ml-2 underline underline-offset-2 hover:text-yellow-300 transition-colors">
+          Shop now →
+        </a>
+      </div>
+
       {/* ── Hero ──────────────────────────────────────────── */}
       <header className="relative overflow-hidden py-28 px-6 text-center">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,168,76,0.10),transparent_60%)]" />
