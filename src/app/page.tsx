@@ -76,8 +76,8 @@ export default function Home() {
             Paste your script. Pick a voice. Get broadcast-quality audio instantly.
             No subscriptions — pay only for what you generate.
           </p>
-          <a href="#generate" className="inline-block bg-gradient-to-r from-gold to-gold-dim text-black font-semibold px-8 py-3.5 rounded-lg text-lg hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(201,168,76,0.3)]">
-            Generate Now →
+          <a href="/dashboard" className="inline-block bg-gradient-to-r from-gold to-gold-dim text-black font-semibold px-8 py-3.5 rounded-lg text-lg hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(201,168,76,0.3)]">
+            Launch Dashboard →
           </a>
         </div>
       </header>
