@@ -56,10 +56,9 @@ export async function POST(req: NextRequest) {
   );
 
   if (!response.ok) {
-    const errText = await response.text();
     return NextResponse.json(
-      { error: `Voice generation failed: ${errText}` },
-      { status: response.status }
+      { error: "Voice generation failed. Please try again." },
+      { status: 502 }
     );
   }
 

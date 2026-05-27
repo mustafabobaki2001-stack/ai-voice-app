@@ -62,10 +62,9 @@ No markdown, no explanation — just the JSON object.`,
   });
 
   if (!response.ok) {
-    const errText = await response.text();
     return NextResponse.json(
-      { error: `Hashtag generation failed: ${errText}` },
-      { status: response.status }
+      { error: "Hashtag generation failed. Please try again." },
+      { status: 502 }
     );
   }
 

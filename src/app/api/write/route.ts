@@ -46,10 +46,9 @@ export async function POST(req: NextRequest) {
   });
 
   if (!response.ok) {
-    const errText = await response.text();
     return NextResponse.json(
-      { error: `Writer failed: ${errText}` },
-      { status: response.status }
+      { error: "Content generation failed. Please try again." },
+      { status: 502 }
     );
   }
 

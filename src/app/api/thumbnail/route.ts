@@ -56,10 +56,9 @@ No markdown, no explanation — just the JSON array.`,
   });
 
   if (!response.ok) {
-    const errText = await response.text();
     return NextResponse.json(
-      { error: `Thumbnail generation failed: ${errText}` },
-      { status: response.status }
+      { error: "Thumbnail generation failed. Please try again." },
+      { status: 502 }
     );
   }
 

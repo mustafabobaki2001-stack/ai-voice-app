@@ -50,10 +50,9 @@ No markdown, no explanation — just the JSON array.`,
   });
 
   if (!response.ok) {
-    const errText = await response.text();
     return NextResponse.json(
-      { error: `Carousel generation failed: ${errText}` },
-      { status: response.status }
+      { error: "Carousel generation failed. Please try again." },
+      { status: 502 }
     );
   }
 

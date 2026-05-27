@@ -31,6 +31,20 @@ export async function POST(req: NextRequest) {
 
   const product = PRICE_MAP[priceId];
 
+  const origin = req.nextUrl.origin;
+
+  function isSameOrigin(url: string | undefined): boolean {
+    if (!url) return false;
+    try {
+      return new URL(url).origin === origin;
+    } catch {
+      return false;
+    }
+  }
+
+  const safeSuccessUrl = isSameOrigin(successUrl) ? successUrl : `${origin}/dashboard?paid=true`;
+  const safeCancelUrl = isSameOrigin(cancelUrl) ? cancelUrl : `${origin}/dashboard?cancelled=true`;
+
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
     line_items: [
@@ -43,8 +57,8 @@ export async function POST(req: NextRequest) {
         quantity: 1,
       },
     ],
-    success_url: successUrl ?? `${req.nextUrl.origin}/dashboard?paid=true`,
-    cancel_url: cancelUrl ?? `${req.nextUrl.origin}/dashboard?cancelled=true`,
+    success_url: safeSuccessUrl,
+    cancel_url: safeCancelUrl,
   });
 
   return NextResponse.json({ url: session.url });
